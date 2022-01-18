@@ -7,10 +7,6 @@ let pokemonList = [
 ]
 
 let text= "";
-let i = 0;
-for (;pokemonList[i];) {
-  text= text  + " " +  pokemonList.name[i] + "height: " + pokemonList.height[i];
-  i++
-}
-document.write (text);
+for (let i = 0; pokemonList[i];  i++) {
+  document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") ");
 }
