@@ -8,5 +8,5 @@ let pokemonList = [
 
 let text= "";
 for (let i = 0; pokemonList[i];  i++) {
-  document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") ");
+  document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") " + "<br>");
 }
