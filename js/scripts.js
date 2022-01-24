@@ -6,11 +6,7 @@ let pokemonList = [
   {name: "Magnemite", height: 0.3, types: ["electric, steel"], abilities: ["Sturdy", "Magnet-pull", "Analytic"] },
 ]
 
-let text= "";
-for (let i = 0; pokemonList[i];  i++) {
-if (pokemonList[i].height > 1) {
-  document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") - Wow, that's big!" + "<br>");
-} else {
-    document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") <br> ");
-  }
-}
+
+pokemonList.forEach(fonction(pokemon) {
+    document.write(pokemon.name + " (height: " + pokemon.height + ") <br>");
+   } ) ;
