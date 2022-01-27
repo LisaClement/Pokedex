@@ -21,7 +21,12 @@ return {
   add: add,
   getAll: getAll,
   addListItem: addListItem,
+  showDetails: showDetails,
 };
+
+function showDetails(pokemon) {
+  console.log(pokemon);
+}
 
 function addListItem(pokemon) {
   let pokemonList = document.querySelector('.pokemon-list');
@@ -31,6 +36,10 @@ function addListItem(pokemon) {
   button.classList.add('pokemonButton');
   listElement.appendChild(button);
   pokemonList.appendChild(listElement);
+  button.addEventListener('click', function () {
+    showDetails (pokemon) ;
+  });
+
 }
 
 })();
