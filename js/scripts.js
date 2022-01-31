@@ -29,6 +29,7 @@ let pokemonRepository= (function () {
     // Now we add the details to the item
     item.imageUrl = details.sprites.front_default;
     item.height = details.height;
+    item.types = parseTypes(details.types);
     }).catch(function (e) {
     console.error(e);
     });
@@ -59,6 +60,13 @@ let pokemonRepository= (function () {
     function getAll() {
         return pokemonList;
     }
+
+    function parseTypes(types) {
+      let parsed = [];
+      types.forEach(function(type) {
+      parsed.push(type.type.name);
+        });
+            return parsed;}
 
     function add(pokemon) {
       pokemonList.push(pokemon);
