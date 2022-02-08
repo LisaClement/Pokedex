@@ -1,5 +1,4 @@
 
-
 let pokemonList = [];
 let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 let pokemonRepository= (function () {
@@ -36,12 +35,17 @@ let pokemonRepository= (function () {
     }
 
   function addListItem(pokemon) {
-    //Adds a <li> with a child <button class="pokemon-button"> to the parent <ul class="pokemon-list">
+    //Adds a <li> with a child <button class="pokemon-button" list-group-item> to the parent <ul class="pokemon-list">
     let pokemonList = document.querySelector('.pokemon-list');
     let listElement = document.createElement('li');
+    listElement.classList.add('list-group-item');
     let button = document.createElement('button');
     button.innerText= pokemon.name;
-    button.classList.add('.pokemonButton');
+    button.classList.add('pokemonButton');
+    button.classList.add('btn');
+    button.classList.add('btn-primary');
+    button.setAttribute('data-toggle', 'modal');
+    button.setAttribute('data-target', '#modal-container');
     listElement.appendChild(button);
     pokemonList.appendChild(listElement);
     //Event listener showing pokemon details when button is clicked
