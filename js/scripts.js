@@ -1,9 +1,8 @@
 
+let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+let pokemonList = [];
 
 let pokemonRepository= (function () {
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-    let pokemonList = [];
-
   //Make the API call to load in the pokemon list
   function loadList() {
     return fetch(apiUrl).then(function (response) {
