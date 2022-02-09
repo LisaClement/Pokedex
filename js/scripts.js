@@ -1,7 +1,8 @@
 
-let pokemonList = [];
-let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+
 let pokemonRepository= (function () {
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    let pokemonList = [];
 
   //Make the API call to load in the pokemon list
   function loadList() {
@@ -45,7 +46,7 @@ let pokemonRepository= (function () {
     button.classList.add('btn');
     button.classList.add('btn-primary');
     button.setAttribute('data-toggle', 'modal');
-    button.setAttribute('data-target', '#modal-container');
+    button.setAttribute('data-target', '#modalContainer');
     listElement.appendChild(button);
     pokemonList.appendChild(listElement);
     //Event listener showing pokemon details when button is clicked
@@ -77,7 +78,7 @@ let pokemonRepository= (function () {
     pokemonList.push(pokemon);
   }
 
-  let modalContainer = document.querySelector('#modal-container');
+  let modalContainer = document.querySelector('#modalContainer');
 
   function showModal(title, text, imageUrl) {
     //clear existing modal content
@@ -109,13 +110,13 @@ let pokemonRepository= (function () {
   }
 
   function hideModal() {
-    let modalContainer = document.querySelector('#modal-container');
+    let modalContainer = document.querySelector('#modalContainer');
     modalContainer.classList.remove('is-visible');
   }
 
   //Closes modal when you hit the esc key
   window.addEventListener('keydown', (e) => {
-    let modalContainer = document.querySelector('#modal-container');
+    let modalContainer = document.querySelector('#modalContainer');
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
       hideModal();
     }
