@@ -1,9 +1,11 @@
-//Pokemon API
-let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
-let pokemonList = [];
+
 
 let pokemonRepository= (function () {
-  
+
+  //Pokemon API
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
+  let pokemonList = [];
+
   //Make the API call to load in the pokemon list
   function loadList() {
     return fetch(apiUrl).then(function (response) {
@@ -103,9 +105,9 @@ let pokemonRepository= (function () {
     let pokemonName = $("<h1>" + pokemon.name + "</h1>");
     // creating images in modal content
     let pokemonImage = $ ('<img class="modal-img" style="width:50%">');
-    imageElementFront.attr("src", pokemon.imageUrlFront);
+    pokemonImage.attr("src", pokemon.imageUrlFront);
     let pokemonImageBack = $ ('<img class="modal-img" style="width:50%">');
-    imageElementBack.attr("src", pokemon.imageUrlBack);
+    pokemonImageBack.attr("src", pokemon.imageUrlBack);
     //creating element for height in modal content
     let pokemonHeight = $("<p>" + "height : " + pokemon.height + "</p>");
     //creating element for weight in modal content
