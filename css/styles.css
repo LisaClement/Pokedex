@@ -26,13 +26,17 @@ ul {
 }
 
 .navbar {
-  padding: 40px;
+  padding: 10px;
+  margin: 14px;
   background: #1abc9c;
   color: white;
   font-size: 30px;
   text-align: center;
 }
 
+.nav-link {
+  font-size: 24px;
+}
 
 .body {
   background-color: #B4DFDF;
